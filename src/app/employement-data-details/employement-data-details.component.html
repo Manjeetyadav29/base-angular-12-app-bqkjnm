@@ -1,0 +1,39 @@
+<div class="employee-container">
+<div class="header">
+<button class="action-button"
+ (click)="sortByName()">Sort by Name</button>
+<button class="action-button" (click)="sortByJoiningDate()">Sort by Joining Date</button>
+</div>
+</div>
+
+<div>
+<input class="search-input" type="text" placeholder="Search by Name" (input)="searchByName($event)" />
+</div>
+
+<div>
+<input class="filter-input" type="number" placeholder="Filter by Experience (years)" (input)="filterExperience($event)" />
+</div>
+<div class="button-container">
+<button class="action-button" (click)="getDistinctDepartments()">Get Distinct Departments</button>
+<button class="action-button" (click)="groupbydepartment()"> Group by Departments</button>
+<button class="action-button" (click)="removeDevelopers()">Remove Developers</button>
+</div>
+
+<table>
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Joining Date</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let employee of employees">
+    <td>{{ employee.id }}</td>
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.department }}</td>
+    <td>{{ employee.joining_date }}</td>
+  </tr>
+</tbody>
+</table>
